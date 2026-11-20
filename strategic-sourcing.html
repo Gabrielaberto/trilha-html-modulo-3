@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Strategic Sourcing: segmentação de categorias, Matriz de Kraljic, gestão de categorias, negociação estratégica, TCO, Should Cost, BATNA e leilão reverso.">
+  <meta name="author" content="Procurepédia — projeto acadêmico">
+  <title>Strategic Sourcing — Procurepédia</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230b5394'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Georgia' font-size='34' font-weight='700' fill='white'%3EP%3C/text%3E%3C/svg%3E">
+</head>
+<body id="topo">
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="cabecalho">
+    <a class="logo" href="index.html" aria-label="Procurepédia — ir para a página principal">
+      <svg viewBox="0 0 64 64" width="40" height="40" aria-hidden="true" focusable="false">
+  <circle cx="32" cy="32" r="29" fill="none" stroke="currentColor" stroke-width="2.5"/>
+  <ellipse cx="32" cy="32" rx="13" ry="29" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".55"/>
+  <path d="M5 24h54M5 40h54" stroke="currentColor" stroke-width="1.2" opacity=".55"/>
+  <path d="M16 18 32 12 48 20 46 40 30 50 16 42Z" fill="none" stroke="#0b5394" stroke-width="2"/>
+  <g fill="#0b5394"><circle cx="16" cy="18" r="3.2"/><circle cx="32" cy="12" r="3.2"/><circle cx="48" cy="20" r="3.2"/>
+  <circle cx="46" cy="40" r="3.2"/><circle cx="30" cy="50" r="3.2"/><circle cx="16" cy="42" r="3.2"/></g>
+  <text x="32" y="39" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-weight="700" fill="currentColor">P</text>
+</svg>
+      <span class="logo-texto" aria-hidden="true">
+        <span class="logo-nome">Procurepédia</span>
+        <span class="logo-lema">Portal enciclopédico sobre Compras Corporativas, Gestão de Fornecedores, Supply Chain, ESG e Transformação Digital.</span>
+      </span>
+    </a>
+    <form class="busca" role="search" action="https://pt.wikipedia.org/w/index.php" method="get" target="_blank">
+      <label for="campo-busca" class="sr-only">Pesquisar o termo na Wikipédia (abre em nova janela)</label>
+      <input id="campo-busca" type="search" name="search" placeholder="Pesquisar na Wikipédia" autocomplete="off">
+      <button type="submit">Pesquisar</button>
+    </form>
+  </header>
+
+  <div class="pagina">
+    <nav class="menu-lateral" aria-label="Menu principal">
+      <details open>
+        <summary>Conteúdo</summary>
+        <div class="menu-itens">
+        <h2>Navegação</h2>
+        <ul>
+          <li><a href="index.html">Página principal</a></li>
+        </ul>
+        <h2>Fundamentos e estratégia</h2>
+        <ul>
+          <li><a href="procurement.html">Fundamentos de Procurement</a></li>
+          <li><a href="strategic-sourcing.html" aria-current="page">Strategic Sourcing</a></li>
+          <li><a href="fornecedores.html">Gestão de Fornecedores</a></li>
+        </ul>
+        <h2>Transformação digital</h2>
+        <ul>
+          <li><a href="e-procurement.html">E-Procurement</a></li>
+          <li><a href="tecnologia-e-ia.html">IA e Analytics</a></li>
+        </ul>
+        <h2>Sustentabilidade</h2>
+        <ul>
+          <li><a href="esg.html">ESG na cadeia de suprimentos</a></li>
+        </ul>
+        <h2>Pessoas e mercado</h2>
+        <ul>
+          <li><a href="carreira.html">Desenvolvimento profissional</a></li>
+          <li><a href="eventos.html">Eventos do setor</a></li>
+        </ul>
+        <h2>Ferramentas</h2>
+        <ul>
+          <li><a href="referencias.html">Referências bibliográficas</a></li>
+        </ul>
+        <h2>Projetos irmãos</h2>
+        <ul>
+          <li><a class="externo" href="https://pt.wikipedia.org/" target="_blank" rel="noopener noreferrer">Wikipédia<span class="sr-only"> (abre em nova janela)</span></a></li>
+          <li><a class="externo" href="https://www.ismworld.org/" target="_blank" rel="noopener noreferrer">ISM<span class="sr-only"> (abre em nova janela)</span></a></li>
+          <li><a class="externo" href="https://www.cips.org/" target="_blank" rel="noopener noreferrer">CIPS<span class="sr-only"> (abre em nova janela)</span></a></li>
+        </ul>
+        </div>
+      </details>
+    </nav>
+
+    <main id="conteudo" class="conteudo" tabindex="-1">
+      <article aria-labelledby="titulo">
+        <h1 id="titulo">Strategic Sourcing</h1>
+        <p class="subtitulo">Origem: Procurepédia, a enciclopédia livre de Procurement &amp; Supply Chain. · <a href="strategic-sourcing.html" target="_blank" rel="noopener">Abrir em nova janela<span class="sr-only"> (abre em nova janela)</span></a></p>
+        <p class="nota-topo">Este artigo pressupõe os conceitos de <a href="procurement.html">Procurement</a>. Para a etapa pós-contratação, veja <a href="fornecedores.html#srm">Supplier Relationship Management</a>.</p>
+
+        <table class="infobox">
+          <caption>Strategic Sourcing</caption>
+          <tbody>
+            <tr><th scope="row">Tradução</th><td>Abastecimento estratégico / sourcing estratégico</td></tr>
+            <tr><th scope="row">Tipo</th><td>Metodologia de gestão de compras</td></tr>
+            <tr><th scope="row">Popularização</th><td>Anos 1990, por consultorias e grandes indústrias</td></tr>
+            <tr><th scope="row">Ferramentas-chave</th><td>Spend analysis, Matriz de Kraljic, TCO, Should Cost, RFx, leilão reverso</td></tr>
+            <tr><th scope="row">Ganho típico</th><td>10% a 20% de redução de custos em práticas maduras (McKinsey, 2023, citada pelo INBRASC)</td></tr>
+            <tr><th scope="row">Artigos relacionados</th><td><a href="#kraljic">Kraljic</a> · <a href="#tco">TCO</a> · <a href="#batna">BATNA</a></td></tr>
+          </tbody>
+        </table>
+
+        <p><strong>Strategic Sourcing</strong> (em português, <em>sourcing estratégico</em>) é uma metodologia estruturada que alinha o processo de compras aos objetivos estratégicos da empresa. Em vez de concentrar-se apenas no menor preço, considera o custo total, a mitigação de riscos, a continuidade do fornecimento e a geração de valor de longo prazo.<sup class="ref"><a href="#nota-1" aria-label="Nota 1">1</a></sup></p>
+        <p>Enquanto a compra tradicional responde a uma requisição ("preciso de 500 luvas até sexta-feira"), o sourcing estratégico olha para a <strong>categoria inteira</strong> ("quanto gastamos com EPIs por ano, de quem compramos, como o mercado se comporta e qual a melhor forma de contratar nos próximos três anos?"). O resultado é uma estratégia documentada, normalmente materializada em contratos de médio ou longo prazo.</p>
+
+        <section aria-labelledby="metodologia">
+          <h2 id="metodologia">Metodologia em sete etapas</h2>
+          <p>Diferentes autores e consultorias usam variações, mas a sequência abaixo, adotada pelo INBRASC, resume o ciclo de um projeto de sourcing:<sup class="ref"><a href="#nota-1" aria-label="Nota 1">1</a></sup></p>
+          <ol class="fluxo" aria-label="Etapas do Strategic Sourcing">
+            <li><strong>Análise de gasto</strong> — para onde vai o dinheiro</li>
+            <li><strong>Segmentação</strong> — agrupar por risco e valor</li>
+            <li><strong>Avaliação de mercado</strong> — fornecedores, riscos, tendências</li>
+            <li><strong>Estratégia</strong> — parceria, leilão, <i lang="en">dual sourcing</i></li>
+            <li><strong>Negociação e seleção</strong> — preço, ESG, inovação, SLA</li>
+            <li><strong>Contrato</strong> — acordos e KPIs claros</li>
+            <li><strong>Monitoramento</strong> — reavaliação contínua</li>
+          </ol>
+          <div class="tabela-container" tabindex="0" role="region" aria-labelledby="cap-trad">
+            <table class="wikitable">
+              <caption id="cap-trad">Compras tradicionais × Strategic Sourcing</caption>
+              <thead><tr><th scope="col">Aspecto</th><th scope="col">Compras tradicionais</th><th scope="col">Strategic Sourcing</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Foco</th><td>Preço e custo unitário</td><td>Custo total, riscos e valor de longo prazo</td></tr>
+                <tr><th scope="row">Papel</th><td>Tático, executa pedidos</td><td>Consultor interno de valor</td></tr>
+                <tr><th scope="row">Visão de mercado</th><td>Reativa</td><td>Antecipa tendências e riscos</td></tr>
+                <tr><th scope="row">Critérios de escolha</th><td>Principalmente preço</td><td>Preço + ESG + inovação + nível de serviço</td></tr>
+                <tr><th scope="row">Posição na empresa</th><td>Centro de custo</td><td>Área estratégica e de inteligência</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <a class="saiba-mais externo" href="https://inbrasc.liveuniversity.com/blog/o-que-%C3%A9-strategic-sourcing-e-como-aplicar-na-sua-organiza%C3%A7%C3%A3o" target="_blank" rel="noopener noreferrer">Saiba mais: O que é Strategic Sourcing (INBRASC)<span class="sr-only"> (abre em nova janela)</span></a>
+          <a class="voltar-topo" href="#titulo">↑ Voltar ao topo</a>
+        </section>
+
+        <section aria-labelledby="segmentacao">
+          <h2 id="segmentacao">Segmentação de categorias</h2>
+          <p>Antes de definir qualquer estratégia, é preciso <strong>organizar o gasto</strong>. A segmentação consiste em agrupar itens e serviços com características de mercado semelhantes em <dfn>categorias</dfn> — por exemplo, "Manutenção mecânica", "Reagentes químicos", "Transporte rodoviário" ou "Serviços de TI". Uma boa taxonomia de categorias é hierárquica (família → categoria → subcategoria) e pode se apoiar em padrões internacionais como o <a class="externo" href="https://www.unspsc.org/" target="_blank" rel="noopener noreferrer">UNSPSC<span class="sr-only"> (abre em nova janela)</span></a>.</p>
+          <p>A partir dessa organização, monta-se o chamado <strong>cubo de gastos</strong> (<i lang="en">spend cube</i>), que cruza três dimensões: <em>o que</em> se compra (categoria), <em>de quem</em> se compra (fornecedor) e <em>quem</em> compra (unidade de negócio ou centro de custo). A análise costuma revelar a regra de Pareto: cerca de 20% dos fornecedores concentram 80% do gasto.</p>
+          <div class="tabela-container" tabindex="0" role="region" aria-labelledby="cap-seg">
+            <table class="wikitable">
+              <caption id="cap-seg">Critérios usuais de segmentação</caption>
+              <thead><tr><th scope="col">Critério</th><th scope="col">Pergunta respondida</th><th scope="col">Exemplo de uso</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Valor gasto</th><td>Quanto representa no orçamento?</td><td>Curva ABC de gastos</td></tr>
+                <tr><th scope="row">Criticidade operacional</th><td>A falta para a operação?</td><td>Peças de equipamentos críticos</td></tr>
+                <tr><th scope="row">Complexidade de mercado</th><td>Há poucos ou muitos fornecedores?</td><td>Monopólios, oligopólios, commodities</td></tr>
+                <tr><th scope="row">Risco ESG</th><td>Há exposição socioambiental?</td><td>Serviços com mão de obra intensiva, transporte</td></tr>
+                <tr><th scope="row">Recorrência</th><td>É compra contínua ou pontual?</td><td>Contratos-quadro × compras <i lang="en">spot</i></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <a class="voltar-topo" href="#titulo">↑ Voltar ao topo</a>
+        </section>
+
+        <section aria-labelledby="kraljic">
+          <h2 id="kraljic">Matriz de Kraljic</h2>
+          <p>A <strong>Matriz de Kraljic</strong> foi proposta por Peter Kraljic em 1983 e é a ferramenta de segmentação de portfólio mais conhecida em Compras.<sup class="ref"><a href="#nota-2" aria-label="Nota 2">2</a></sup> Ela posiciona cada categoria em dois eixos: o <strong>impacto no resultado</strong> (quanto a categoria pesa financeiramente ou no valor do produto final) e o <strong>risco de suprimento</strong> (quão difícil é garantir o abastecimento — número de fornecedores, barreiras de entrada, substitutos, logística).</p>
+          <figure>
+            <div class="matriz" role="img" aria-label="Matriz de Kraljic. Eixo vertical: risco de suprimento. Eixo horizontal: impacto no resultado. Alto risco e baixo impacto: itens gargalo. Alto risco e alto impacto: itens estratégicos. Baixo risco e baixo impacto: itens não críticos. Baixo risco e alto impacto: itens de alavancagem.">
+              <div class="eixo eixo-y" aria-hidden="true">Risco de suprimento ↑</div>
+              <div class="quadrante q-gargalo" aria-hidden="true"><strong>Gargalo</strong>Garantir o volume, estoque de segurança, buscar alternativas</div>
+              <div class="quadrante q-estrategico" aria-hidden="true"><strong>Estratégicos</strong>Parcerias de longo prazo, co-desenvolvimento</div>
+              <div class="quadrante q-nao-critico" aria-hidden="true"><strong>Não críticos</strong>Simplificar, catalogar, automatizar</div>
+              <div class="quadrante q-alavancagem" aria-hidden="true"><strong>Alavancagem</strong>Explorar poder de compra, concorrência, leilões</div>
+              <div class="eixo eixo-x" aria-hidden="true">Impacto no resultado →</div>
+            </div>
+            <figcaption>Figura 1 — Representação da Matriz de Kraljic e das estratégias de cada quadrante.</figcaption>
+          </figure>
+          <div class="tabela-container" tabindex="0" role="region" aria-labelledby="cap-kraljic">
+            <table class="wikitable">
+              <caption id="cap-kraljic">Estratégias recomendadas por quadrante</caption>
+              <thead><tr><th scope="col">Quadrante</th><th scope="col">Impacto</th><th scope="col">Risco</th><th scope="col">Estratégia</th><th scope="col">Exemplos (indústria)</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Não críticos</th><td>Baixo</td><td>Baixo</td><td>Reduzir custo de processo: catálogos, cartões corporativos, automação, poucos fornecedores</td><td>Material de escritório, EPIs comuns, limpeza</td></tr>
+                <tr><th scope="row">Alavancagem</th><td>Alto</td><td>Baixo</td><td>Concorrência intensa, consolidação de volumes, leilão reverso, contratos de curto/médio prazo</td><td>Combustíveis, aço comum, transporte rodoviário</td></tr>
+                <tr><th scope="row">Gargalo</th><td>Baixo</td><td>Alto</td><td>Assegurar fornecimento: estoques de segurança, contratos de garantia, desenvolvimento de alternativas, padronização</td><td>Peças de fabricante único, reagentes específicos</td></tr>
+                <tr><th scope="row">Estratégicos</th><td>Alto</td><td>Alto</td><td>Parcerias de longo prazo, gestão de relacionamento (SRM), inovação conjunta, planos de contingência</td><td>Equipamentos de mina, energia elétrica, explosivos</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Críticas comuns à matriz são a subjetividade na classificação e o fato de considerar apenas a perspectiva do comprador. Por isso, ela é frequentemente complementada pela <strong>matriz de percepção do fornecedor</strong>, que avalia o quanto a empresa é atrativa como cliente para o fornecedor.</p>
+          <a class="saiba-mais externo" href="https://hbr.org/1983/09/purchasing-must-become-supply-management" target="_blank" rel="noopener noreferrer">Saiba mais: Artigo original de Kraljic (HBR)<span class="sr-only"> (abre em nova janela)</span></a>
+          <a class="voltar-topo" href="#titulo">↑ Voltar ao topo</a>
+        </section>
+
+        <section aria-labelledby="categorias">
+          <h2 id="categorias">Gestão de categorias</h2>
+          <p>A <strong>gestão de categorias</strong> (<i lang="en">Category Management</i>) organiza a área de Compras por grupos de itens em vez de por pedidos isolados. Cada categoria tem um responsável — o <dfn>gestor ou comprador de categoria</dfn> — que se torna especialista naquele mercado e responde pela estratégia, pelos contratos, pelos fornecedores e pelos resultados ao longo do tempo.</p>
+          <p>O principal entregável é o <strong>plano de categoria</strong>, um documento que normalmente contém:</p>
+          <ul>
+            <li><strong>Perfil da categoria</strong>: gasto histórico, volumes, fornecedores atuais, contratos e vencimentos.</li>
+            <li><strong>Necessidades dos clientes internos</strong>: requisitos técnicos, níveis de serviço e oportunidades de padronização.</li>
+            <li><strong>Análise de mercado</strong>: estrutura de oferta, poder de barganha (as <em>cinco forças</em> de Porter), índices de preço e tendências.</li>
+            <li><strong>Estratégia</strong>: modelo de contratação, número de fornecedores, prazo dos contratos e alavancas de valor.</li>
+            <li><strong>Plano de ação e metas</strong>: cronograma de concorrências, metas de <i lang="en">saving</i>, riscos e indicadores.</li>
+          </ul>
+          <div class="caixa">
+            <h3>Alavancas de valor mais usadas</h3>
+            <p><strong>Comerciais:</strong> consolidação de volume, concorrência, renegociação, mudança de índice de reajuste. <strong>Técnicas:</strong> padronização de especificações, substituição de materiais, engenharia de valor. <strong>De demanda:</strong> redução de consumo, gestão de estoques, políticas de uso. <strong>De relacionamento:</strong> parcerias, contratos por desempenho, inovação conjunta.</p>
+          </div>
+          <a class="voltar-topo" href="#titulo">↑ Voltar ao topo</a>
+        </section>
+
+        <section aria-labelledby="negociacao">
+          <h2 id="negociacao">Negociação estratégica</h2>
+          <p>Negociação em Procurement não é "pedir desconto". A abordagem mais difundida é o <strong>Método de Negociação de Harvard</strong>, apresentado por Roger Fisher e William Ury no livro <cite>Como chegar ao sim</cite> (<cite lang="en">Getting to Yes</cite>, 1981).<sup class="ref"><a href="#nota-3" aria-label="Nota 3">3</a></sup> O método propõe negociar com base em princípios, e não em posições, a partir de quatro pilares:</p>
+          <ol>
+            <li><strong>Separar as pessoas do problema</strong> — ser duro com o problema e cordial com as pessoas.</li>
+            <li><strong>Concentrar-se em interesses, não em posições</strong> — entender <em>por que</em> o fornecedor pede um reajuste ajuda a encontrar soluções que não sejam apenas preço.</li>
+            <li><strong>Criar opções de ganho mútuo</strong> — prazo de contrato maior em troca de preço menor, previsibilidade de volume, antecipação de pagamento.</li>
+            <li><strong>Usar critérios objetivos</strong> — índices de mercado, <i lang="en">should cost</i>, <i lang="en">benchmarks</i>.</li>
+          </ol>
+          <h3>Preparação: o que todo comprador deve saber antes da mesa</h3>
+          <div class="tabela-container" tabindex="0" role="region" aria-labelledby="cap-prep">
+            <table class="wikitable">
+              <caption id="cap-prep">Conceitos de preparação para negociação</caption>
+              <thead><tr><th scope="col">Conceito</th><th scope="col">Significado</th><th scope="col">Pergunta-chave</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Objetivo (alvo)</th><td>O melhor resultado realista que se pretende alcançar</td><td>Onde quero chegar?</td></tr>
+                <tr><th scope="row">Preço de reserva</th><td>O limite a partir do qual é melhor não fechar acordo</td><td>Até onde posso ir?</td></tr>
+                <tr><th scope="row"><a href="#batna">BATNA / MAANA</a></th><td>A melhor alternativa caso não haja acordo</td><td>O que faço se não fechar?</td></tr>
+                <tr><th scope="row"><abbr title="Zone of Possible Agreement">ZOPA</abbr></th><td>Zona de possível acordo: intervalo entre o preço de reserva do comprador e o do vendedor</td><td>Existe espaço para acordo?</td></tr>
+                <tr><th scope="row">Concessões planejadas</th><td>Itens de baixo custo para nós e alto valor para o outro lado</td><td>O que posso oferecer em troca?</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <a class="voltar-topo" href="#titulo">↑ Voltar ao topo</a>
+        </section>
+
+        <section aria-labelledby="tco">
+          <h2 id="tco">TCO — Custo Total de Propriedade</h2>
+          <p>O <strong>Custo Total de Propriedade</strong> (<i lang="en">Total Cost of Ownership</i>, <abbr title="Total Cost of Ownership">TCO</abbr>) é uma forma de avaliar um bem ou serviço considerando tudo o que ele custa ao longo de toda a sua vida útil, e não apenas o preço de compra. Ele reúne custos diretos e indiretos de aquisição, operação, manutenção e descarte — de modo que um item com preço inicial mais alto pode, no longo prazo, ser a opção mais barata.<sup class="ref"><a href="#nota-4" aria-label="Nota 4">4</a></sup></p>
+          <p>A pesquisadora Lisa Ellram, uma das principais referências no tema, descreve o TCO como uma filosofia que obriga o comprador a entender os <strong>custos ocultos</strong> de fazer negócio com um fornecedor: qualidade, atrasos, estoque, retrabalho, transporte e administração.<sup class="ref"><a href="#nota-5" aria-label="Nota 5">5</a></sup> Costuma-se usar a metáfora do <strong>iceberg</strong>: o preço é a ponta visível; a maior parte do custo está abaixo da linha d'água.</p>
+          <p class="formula" aria-label="Fórmula do TCO: TCO igual a custo de aquisição, mais custos operacionais, mais custos de manutenção, mais custo de depreciação e de oportunidade, menos valor residual de revenda.">TCO = Aquisição + Operação + Manutenção + (Depreciação e custo de oportunidade) − Valor residual</p>
+          <div class="tabela-container" tabindex="0" role="region" aria-labelledby="cap-tco">
+            <table class="wikitable">
+              <caption id="cap-tco">Componentes do TCO</caption>
+              <thead><tr><th scope="col">Componente</th><th scope="col">Exemplos</th><th scope="col">Quem costuma conhecer o dado</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Aquisição</th><td>Preço, impostos não recuperáveis, frete, seguro, instalação, treinamento</td><td>Compras, Fiscal, Logística</td></tr>
+                <tr><th scope="row">Operação</th><td>Energia, combustível, consumíveis, mão de obra de operação</td><td>Operação, Engenharia</td></tr>
+                <tr><th scope="row">Manutenção</th><td>Peças, revisões, paradas não programadas, contratos de assistência</td><td>Manutenção</td></tr>
+                <tr><th scope="row">Qualidade e risco</th><td>Retrabalho, devoluções, multas, atrasos, risco de ruptura</td><td>Qualidade, Planejamento</td></tr>
+                <tr><th scope="row">Financeiro</th><td>Depreciação, custo de capital, prazo de pagamento</td><td>Finanças, Controladoria</td></tr>
+                <tr><th scope="row">Fim de vida</th><td>Descarte, logística reversa, valor de revenda</td><td>Meio Ambiente, Patrimônio</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>Exemplo: comparação de duas bombas industriais (vida útil de 5 anos)</h3>
+          <div class="tabela-container" tabindex="0" role="region" aria-labelledby="cap-tco-ex">
+            <table class="wikitable">
+              <caption id="cap-tco-ex">Exemplo ilustrativo de cálculo de TCO (valores em R$)</caption>
+              <thead><tr><th scope="col">Item de custo</th><th scope="col">Bomba A (mais barata)</th><th scope="col">Bomba B (mais eficiente)</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Preço de compra + instalação</th><td>80.000</td><td>110.000</td></tr>
+                <tr><th scope="row">Energia (5 anos)</th><td>150.000</td><td>115.000</td></tr>
+                <tr><th scope="row">Manutenção (5 anos)</th><td>35.000</td><td>20.000</td></tr>
+                <tr><th scope="row">Paradas não programadas (5 anos)</th><td>25.000</td><td>10.000</td></tr>
+                <tr><th scope="row">(−) Valor residual</th><td>−5.000</td><td>−10.000</td></tr>
+                <tr><th scope="row"><strong>TCO total</strong></th><td><strong>285.000</strong></td><td><strong>245.000</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Embora a Bomba A custe R$ 30 mil a menos na compra, a Bomba B é <strong>R$ 40 mil mais barata</strong> ao longo da vida útil. Uma análise mais sofisticada traria os valores futuros a valor presente (fluxo de caixa descontado).</p>
+          <a class="saiba-mais externo" href="https://www.totvs.com/blog/gestao-logistica/total-ownership-cost/" target="_blank" rel="noopener noreferrer">Saiba mais: Total Cost of Ownership (TOTVS)<span class="sr-only"> (abre em nova janela)</span></a>
+          <a class="voltar-topo" href="#titulo">↑ Voltar ao topo</a>
+        </section>
+
+        <section aria-labelledby="should-cost">
+          <h2 id="should-cost">Should Cost</h2>
+          <p><strong>Should Cost</strong> ("quanto deveria custar") é uma técnica de modelagem que estima o custo justo de um produto ou serviço <strong>a partir da sua composição</strong>: matéria-prima, mão de obra, energia, despesas indiretas, logística e margem do fornecedor. Em vez de comparar apenas propostas entre si, o comprador passa a ter uma referência independente, construída de baixo para cima (<i lang="en">bottom-up</i>).</p>
+          <p>É especialmente útil em categorias com poucos fornecedores, em renegociações de reajuste e em itens fabricados sob desenho. Quando o fornecedor compartilha sua planilha de custos, fala-se em <strong>abertura de custos</strong> (<i lang="en">cost breakdown</i>) ou <i lang="en">open book</i>.</p>
+          <div class="tabela-container" tabindex="0" role="region" aria-labelledby="cap-should">
+            <table class="wikitable">
+              <caption id="cap-should">Exemplo de estrutura de Should Cost para uma peça usinada</caption>
+              <thead><tr><th scope="col">Elemento de custo</th><th scope="col">Base de cálculo</th><th scope="col">Fonte de referência</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Matéria-prima</th><td>Peso bruto × preço do aço por kg</td><td>Índices de mercado de aço</td></tr>
+                <tr><th scope="row">Mão de obra direta</th><td>Horas de usinagem × custo-hora</td><td>Convenções coletivas, <i lang="en">benchmarks</i></td></tr>
+                <tr><th scope="row">Máquina e energia</th><td>Horas-máquina × taxa horária</td><td>Tarifas de energia, depreciação</td></tr>
+                <tr><th scope="row">Custos indiretos</th><td>Percentual sobre custo direto</td><td>Demonstrações do setor</td></tr>
+                <tr><th scope="row">Logística e embalagem</th><td>Frete por kg/km</td><td>Tabelas de frete</td></tr>
+                <tr><th scope="row">Margem do fornecedor</th><td>Percentual de lucro razoável</td><td>Margens médias do segmento</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <a class="voltar-topo" href="#titulo">↑ Voltar ao topo</a>
+        </section>
+
+        <section aria-labelledby="batna">
+          <h2 id="batna">BATNA</h2>
+          <p><strong>BATNA</strong> é a sigla de <i lang="en">Best Alternative to a Negotiated Agreement</i> — em português, <strong>MAANA</strong> (Melhor Alternativa à Negociação de um Acordo). O conceito foi criado por Fisher e Ury e representa <strong>o que você fará se a negociação não der certo</strong>.<sup class="ref"><a href="#nota-3" aria-label="Nota 3">3</a></sup> Quanto melhor a sua BATNA, maior o seu poder de negociação, porque você não depende do acordo.</p>
+          <p>Exemplo: um comprador renegocia o contrato de transporte com o fornecedor atual, que pede 12% de reajuste. Se ele já tem uma proposta homologada de outra transportadora com aumento de 5%, essa proposta é a sua BATNA — e qualquer acordo acima de 5% (somado ao custo de troca) não faz sentido. Por isso, em Procurement, <strong>desenvolver alternativas antes de negociar</strong> (novos fornecedores, substitutos, fazer internamente) é tão importante quanto a negociação em si.</p>
+          <div class="caixa caixa--dica">
+            <h3>Como fortalecer a sua BATNA</h3>
+            <ul>
+              <li>Mantenha mais de um fornecedor homologado nas categorias relevantes.</li>
+              <li>Conheça o custo e o tempo de troca de fornecedor.</li>
+              <li>Estime também a BATNA do fornecedor: o que ele perde se não fechar com você?</li>
+              <li>Nunca revele sua BATNA se ela for fraca; use-a se for forte.</li>
+            </ul>
+          </div>
+          <a class="voltar-topo" href="#titulo">↑ Voltar ao topo</a>
+        </section>
+
+        <section aria-labelledby="leilao">
+          <h2 id="leilao">Leilão reverso</h2>
+          <p>No <strong>leilão reverso</strong> (<i lang="en">reverse auction</i>), os papéis do leilão tradicional se invertem: há um comprador e vários vendedores, e os lances são <strong>decrescentes</strong>. Os fornecedores, previamente qualificados, disputam em tempo real em uma plataforma eletrônica, dentro de um período definido. No setor público brasileiro, a lógica equivale ao <em>pregão eletrônico</em>.</p>
+          <div class="tabela-container" tabindex="0" role="region" aria-labelledby="cap-leilao">
+            <table class="wikitable">
+              <caption id="cap-leilao">Principais formatos de leilão reverso</caption>
+              <thead><tr><th scope="col">Formato</th><th scope="col">Como funciona</th><th scope="col">Quando usar</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Inglês reverso</th><td>Lances decrescentes abertos; todos veem o melhor preço ou sua posição no ranking</td><td>Itens padronizados com muitos fornecedores</td></tr>
+                <tr><th scope="row">Holandês reverso</th><td>O preço começa baixo e sobe em intervalos até que um fornecedor aceite</td><td>Mercados com poucos fornecedores ou preços voláteis</td></tr>
+                <tr><th scope="row">Japonês</th><td>O comprador reduz o preço por rodadas; quem não aceita sai do leilão</td><td>Categorias com fornecedores equivalentes</td></tr>
+                <tr><th scope="row">Selado (envelope fechado)</th><td>Cada fornecedor envia uma única proposta sigilosa</td><td>Contratos complexos ou com risco de conluio</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Funciona bem</strong> para itens de <a href="#kraljic">alavancagem</a>: especificação clara, mercado competitivo e volume atrativo. <strong>Deve ser evitado</strong> em categorias estratégicas ou de serviços complexos, em que o relacionamento e a qualidade pesam mais que o preço, e quando há poucos participantes. O uso excessivo pode desgastar a relação com fornecedores-chave.</p>
+          <a class="voltar-topo" href="#titulo">↑ Voltar ao topo</a>
+        </section>
+
+        <section aria-labelledby="video">
+          <h2 id="video">Vídeo</h2>
+          <figure>
+            <div class="video">
+              <iframe src="https://www.youtube.com/embed/AKRpe-szYh0?si=tQMi-GyN_2wcTNAb" title="Vídeo do YouTube sobre Strategic Sourcing" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <figcaption>Vídeo complementar sobre Strategic Sourcing. <a class="externo" href="https://www.youtube.com/watch?v=AKRpe-szYh0" target="_blank" rel="noopener noreferrer">Assistir diretamente no YouTube<span class="sr-only"> (abre em nova janela)</span></a>.</figcaption>
+          </figure>
+        </section>
+
+        <section aria-labelledby="referencias">
+          <h2 id="referencias">Notas e referências</h2>
+          <ol class="referencias">
+            <li id="nota-1">INBRASC. <a class="externo" href="https://inbrasc.liveuniversity.com/blog/o-que-%C3%A9-strategic-sourcing-e-como-aplicar-na-sua-organiza%C3%A7%C3%A3o" target="_blank" rel="noopener noreferrer">O que é Strategic Sourcing e como aplicar na sua organização<span class="sr-only"> (abre em nova janela)</span></a>. Live University.</li>
+            <li id="nota-2">KRALJIC, P. Purchasing Must Become Supply Management. <cite lang="en">Harvard Business Review</cite>, set. 1983.</li>
+            <li id="nota-3">FISHER, R.; URY, W.; PATTON, B. <cite>Como chegar ao sim</cite>. Rio de Janeiro: Sextante.</li>
+            <li id="nota-4">TOTVS. <a class="externo" href="https://www.totvs.com/blog/gestao-logistica/total-ownership-cost/" target="_blank" rel="noopener noreferrer">Total Cost of Ownership (TCO): o que é e como calcular<span class="sr-only"> (abre em nova janela)</span></a>.</li>
+            <li id="nota-5">ELLRAM, L. M. Total Cost of Ownership: Elements and Implementation. <cite lang="en">International Journal of Purchasing and Materials Management</cite>, 1993.</li>
+          </ol>
+        </section>
+
+        <nav class="categorias" aria-label="Categorias">
+          <strong>Categorias:</strong>
+          <ul><li><a href="strategic-sourcing.html">Estratégia</a></li><li><a href="strategic-sourcing.html#negociacao">Negociação</a></li><li><a href="strategic-sourcing.html#tco">Custos</a></li></ul>
+        </nav>
+      </article>
+
+    </main>
+
+    <aside class="lateral-direita" aria-label="Navegação no artigo">
+      <nav class="sumario" aria-labelledby="sumario-titulo">
+          <h2 id="sumario-titulo">Neste artigo</h2>
+          <ol>
+            <li><a href="#metodologia">Metodologia em sete etapas</a></li>
+            <li><a href="#segmentacao">Segmentação de categorias</a></li>
+            <li><a href="#kraljic">Matriz de Kraljic</a></li>
+            <li><a href="#categorias">Gestão de categorias</a></li>
+            <li><a href="#negociacao">Negociação estratégica</a></li>
+            <li><a href="#tco">TCO — Custo Total de Propriedade</a></li>
+            <li><a href="#should-cost">Should Cost</a></li>
+            <li><a href="#batna">BATNA</a></li>
+            <li><a href="#leilao">Leilão reverso</a></li>
+            <li><a href="#video">Vídeo</a></li>
+            <li><a href="#referencias">Notas e referências</a></li>
+          </ol>
+        </nav>
+    </aside>
+  </div>
+
+  <footer class="rodape">
+    <p>Esta página foi editada pela última vez em 19 de novembro de 2026. Os textos podem ser reutilizados citando a fonte. Marcas citadas pertencem aos seus respectivos titulares.</p>
+    <ul>
+      <li><a href="index.html">Sobre a Procurepédia</a></li>
+      <li><a href="referencias.html">Referências</a></li>
+      <li><a href="#topo">Voltar ao topo</a></li>
+    </ul>
+  </footer>
+  <script>
+    /* Em telas pequenas, o menu começa recolhido (o HTML funciona mesmo sem JavaScript). */
+    if (window.matchMedia("(max-width: 760px)").matches) {
+      document.querySelector(".menu-lateral details").removeAttribute("open");
+    }
+  </script>
+</body>
+</html>
