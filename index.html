@@ -1,43 +1,250 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Principal</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Procurepédia: enciclopédia livre e acessível sobre Procurement, Strategic Sourcing, gestão de fornecedores, e-procurement, IA, ESG e carreira em Suprimentos.">
+  <meta name="author" content="Procurepédia — projeto acadêmico">
+  <title>Procurepédia — A enciclopédia livre de Procurement</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230b5394'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Georgia' font-size='34' font-weight='700' fill='white'%3EP%3C/text%3E%3C/svg%3E">
 </head>
-<body>
+<body id="topo">
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
 
-    <div>   
-        <div class="logo">
-            <img src="assets/images/logo.png" width="200"/>
+  <header class="cabecalho">
+    <a class="logo" href="index.html" aria-label="Procurepédia — ir para a página principal">
+      <svg viewBox="0 0 64 64" width="40" height="40" aria-hidden="true" focusable="false">
+  <circle cx="32" cy="32" r="29" fill="none" stroke="currentColor" stroke-width="2.5"/>
+  <ellipse cx="32" cy="32" rx="13" ry="29" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".55"/>
+  <path d="M5 24h54M5 40h54" stroke="currentColor" stroke-width="1.2" opacity=".55"/>
+  <path d="M16 18 32 12 48 20 46 40 30 50 16 42Z" fill="none" stroke="#0b5394" stroke-width="2"/>
+  <g fill="#0b5394"><circle cx="16" cy="18" r="3.2"/><circle cx="32" cy="12" r="3.2"/><circle cx="48" cy="20" r="3.2"/>
+  <circle cx="46" cy="40" r="3.2"/><circle cx="30" cy="50" r="3.2"/><circle cx="16" cy="42" r="3.2"/></g>
+  <text x="32" y="39" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-weight="700" fill="currentColor">P</text>
+</svg>
+      <span class="logo-texto" aria-hidden="true">
+        <span class="logo-nome">Procurepédia</span>
+        <span class="logo-lema">Portal enciclopédico sobre Compras Corporativas, Gestão de Fornecedores, Supply Chain, ESG e Transformação Digital.</span>
+      </span>
+    </a>
+    <form class="busca" role="search" action="https://pt.wikipedia.org/w/index.php" method="get" target="_blank">
+      <label for="campo-busca" class="sr-only">Pesquisar o termo na Wikipédia (abre em nova janela)</label>
+      <input id="campo-busca" type="search" name="search" placeholder="Pesquisar na Wikipédia" autocomplete="off">
+      <button type="submit">Pesquisar</button>
+    </form>
+  </header>
+
+  <div class="pagina">
+    <nav class="menu-lateral" aria-label="Menu principal">
+      <details open>
+        <summary>Conteúdo</summary>
+        <div class="menu-itens">
+        <h2>Navegação</h2>
+        <ul>
+          <li><a href="index.html" aria-current="page">Página principal</a></li>
+        </ul>
+        <h2>Fundamentos e estratégia</h2>
+        <ul>
+          <li><a href="procurement.html">Fundamentos de Procurement</a></li>
+          <li><a href="strategic-sourcing.html">Strategic Sourcing</a></li>
+          <li><a href="fornecedores.html">Gestão de Fornecedores</a></li>
+        </ul>
+        <h2>Transformação digital</h2>
+        <ul>
+          <li><a href="e-procurement.html">E-Procurement</a></li>
+          <li><a href="tecnologia-e-ia.html">IA e Analytics</a></li>
+        </ul>
+        <h2>Sustentabilidade</h2>
+        <ul>
+          <li><a href="esg.html">ESG na cadeia de suprimentos</a></li>
+        </ul>
+        <h2>Pessoas e mercado</h2>
+        <ul>
+          <li><a href="carreira.html">Desenvolvimento profissional</a></li>
+          <li><a href="eventos.html">Eventos do setor</a></li>
+        </ul>
+        <h2>Ferramentas</h2>
+        <ul>
+          <li><a href="referencias.html">Referências bibliográficas</a></li>
+        </ul>
+        <h2>Projetos irmãos</h2>
+        <ul>
+          <li><a class="externo" href="https://pt.wikipedia.org/" target="_blank" rel="noopener noreferrer">Wikipédia<span class="sr-only"> (abre em nova janela)</span></a></li>
+          <li><a class="externo" href="https://www.ismworld.org/" target="_blank" rel="noopener noreferrer">ISM<span class="sr-only"> (abre em nova janela)</span></a></li>
+          <li><a class="externo" href="https://www.cips.org/" target="_blank" rel="noopener noreferrer">CIPS<span class="sr-only"> (abre em nova janela)</span></a></li>
+        </ul>
         </div>
-    </div>
+      </details>
+    </nav>
 
-    <div class="bar"></div>
+    <main id="conteudo" class="conteudo" tabindex="-1">
+      <section class="boas-vindas" aria-labelledby="titulo-home">
+        <h1 id="titulo-home">Bem-vindo(a) à Procurepédia</h1>
+        <p>A enciclopédia livre de <strong>Procurement &amp; Supply Chain</strong> que qualquer profissional, estudante ou curioso pode consultar.</p>
+        <p class="subtitulo"><strong>10</strong> artigos · <strong>8</strong> áreas temáticas · <strong>+60</strong> conceitos explicados · escrita em português do Brasil</p>
+      </section>
 
-    <div class="content">
-        <div class="sidebar">
-            <h2>Título</h2>
-            <ul>
-                <li><a href="#">Links</a></li>
+      <div class="portal">
+        <section class="painel painel--largo" aria-labelledby="sobre">
+          <h2 id="sobre">O que é a Procurepédia?</h2>
+          <div class="painel-corpo">
+            <p>A <strong>Procurepédia</strong> é uma enciclopédia temática, inspirada na estrutura da <a class="externo" href="https://pt.wikipedia.org/" target="_blank" rel="noopener noreferrer">Wikipédia<span class="sr-only"> (abre em nova janela)</span></a>, dedicada à área de <dfn>Procurement</dfn> — o conjunto de processos pelos quais uma organização identifica, contrata, recebe e paga os bens e serviços de que precisa para operar. Seu objetivo é reunir, em linguagem clara e com referências confiáveis, os conceitos que um profissional de compras utiliza no dia a dia: da requisição de compra à negociação estratégica, da homologação de fornecedores à aplicação de inteligência artificial.</p>
+            <p>Durante décadas, Compras foi vista como uma área administrativa, encarregada de "emitir pedidos". Hoje, em empresas de capital intensivo como mineração, energia e manufatura, os gastos com terceiros podem representar a maior parte dos custos totais — o que torna o <strong>Procurement</strong> uma alavanca direta de margem, de gestão de riscos e de sustentabilidade. Esta enciclopédia foi construída a partir da vivência prática de quem atua em Suprimentos e da literatura de referência do setor.</p>
+          </div>
+        </section>
+
+        <section class="painel painel--largo" aria-labelledby="areas">
+          <h2 id="areas">Resumo das áreas</h2>
+          <div class="painel-corpo">
+            <ul class="grade">
+              <li class="cartao">
+                <span class="etiqueta">Fundamentos</span>
+                <h3><a href="procurement.html">Procurement</a></h3>
+                <p>Definição, etimologia, evolução histórica, objetivos e os principais indicadores (KPIs) da função Compras.</p>
+              </li>
+              <li class="cartao">
+                <span class="etiqueta">Estratégia</span>
+                <h3><a href="strategic-sourcing.html">Strategic Sourcing</a></h3>
+                <p>Matriz de Kraljic, gestão de categorias, TCO, <i lang="en">Should Cost</i>, BATNA e leilão reverso.</p>
+              </li>
+              <li class="cartao">
+                <span class="etiqueta">Fornecedores</span>
+                <h3><a href="fornecedores.html">Gestão de Fornecedores</a></h3>
+                <p>Homologação, <i lang="en">due diligence</i>, avaliação de desempenho, SRM, desenvolvimento local e diversidade.</p>
+              </li>
+              <li class="cartao">
+                <span class="etiqueta">Digital</span>
+                <h3><a href="e-procurement.html">E-Procurement</a></h3>
+                <p><i lang="en">Procure-to-Pay</i>, <i lang="en">Source-to-Pay</i>, eSourcing, catálogos e as principais plataformas do mercado.</p>
+              </li>
+              <li class="cartao">
+                <span class="etiqueta">Inovação</span>
+                <h3><a href="tecnologia-e-ia.html">IA e Analytics</a></h3>
+                <p><i lang="en">Spend analytics</i>, dashboards em Power BI, Databricks, Copilot e agentes de IA aplicados a compras.</p>
+              </li>
+              <li class="cartao">
+                <span class="etiqueta">Sustentabilidade</span>
+                <h3><a href="esg.html">ESG</a></h3>
+                <p>Compras sustentáveis, carbono de Escopo 3, diversidade, governança e a ISO 20400.</p>
+              </li>
+              <li class="cartao">
+                <span class="etiqueta">Pessoas</span>
+                <h3><a href="carreira.html">Carreira</a></h3>
+                <p>Competências técnicas, <i lang="en">soft skills</i> e certificações para quem quer crescer em Suprimentos.</p>
+              </li>
+              <li class="cartao">
+                <span class="etiqueta">Mercado</span>
+                <h3><a href="eventos.html">Eventos</a></h3>
+                <p>Fóruns, congressos e maratonas que reúnem a comunidade de Compras e Supply Chain no Brasil.</p>
+              </li>
+              <li class="cartao">
+                <span class="etiqueta">Pesquisa</span>
+                <h3><a href="referencias.html">Referências</a></h3>
+                <p>Bibliografia clássica, normas técnicas e fontes on-line usadas na construção dos artigos.</p>
+              </li>
             </ul>
-        </div>
+          </div>
+        </section>
 
-        <div class="main">
-            
-        </div>
+        <section class="painel" aria-labelledby="destaque">
+          <h2 id="destaque">Artigo em destaque</h2>
+          <div class="painel-corpo">
+            <h3>Matriz de Kraljic</h3>
+            <p>Publicada por Peter Kraljic na <cite>Harvard Business Review</cite> em 1983, a matriz classifica os itens comprados segundo dois eixos — <strong>impacto no resultado</strong> e <strong>risco de suprimento</strong> — formando quatro quadrantes: itens <em>não críticos</em>, <em>de alavancagem</em>, <em>gargalo</em> e <em>estratégicos</em>. Para cada quadrante corresponde uma estratégia de compra diferente, o que fez da ferramenta a base da gestão moderna de categorias. Mais de quatro décadas depois, ela continua sendo o primeiro passo de praticamente todo projeto de <i lang="en">Strategic Sourcing</i>.</p>
+            <p><a href="strategic-sourcing.html#kraljic">Ler o artigo completo →</a></p>
+          </div>
+        </section>
 
-        <div class="anchors">
-            <h2>Neste Artigo</h2>
+        <section class="painel" aria-labelledby="sabia">
+          <h2 id="sabia">Você sabia…?</h2>
+          <div class="painel-corpo">
             <ul>
-                <li><a href="#">Âncoras</a></li>
+              <li>… que a palavra <em>procurement</em> vem do latim <i lang="la">procurare</i>, "cuidar de", "providenciar"? (<a href="procurement.html#etimologia">Etimologia</a>)</li>
+              <li>… que o produto mais barato pode ter o maior <abbr title="Custo Total de Propriedade (Total Cost of Ownership)">TCO</abbr>? (<a href="strategic-sourcing.html#tco">TCO</a>)</li>
+              <li>… que, em média, as emissões da cadeia de fornecedores superam várias vezes as emissões das operações próprias de uma empresa? (<a href="esg.html#carbono">Carbono na cadeia</a>)</li>
+              <li>… que a <abbr title="Melhor Alternativa à Negociação de um Acordo">MAANA</abbr>, ou BATNA, é considerada a principal fonte de poder em uma negociação? (<a href="strategic-sourcing.html#batna">BATNA</a>)</li>
+              <li>… que a primeira associação profissional de compradores foi fundada nos Estados Unidos em 1915? (<a href="procurement.html#historia">História</a>)</li>
             </ul>
-        </div>
-    </div>
+          </div>
+        </section>
 
-    <div class="footer">
+        <section class="painel" aria-labelledby="recentes">
+          <h2 id="recentes">Conteúdos recentes</h2>
+          <div class="painel-corpo">
+            <ul>
+              <li><a href="tecnologia-e-ia.html#agentes">Agentes de IA em Compras</a> — como a IA agêntica executa tarefas de ponta a ponta. <small>(nov. 2026)</small></li>
+              <li><a href="esg.html#carbono">Carbono na cadeia de suprimentos</a> — Escopo 3 e o papel do comprador. <small>(nov. 2026)</small></li>
+              <li><a href="fornecedores.html#homologacao">Homologação de fornecedores</a> — etapas, documentos e responsabilidades. <small>(nov. 2026)</small></li>
+              <li><a href="carreira.html#certificacoes">Certificações em Supply Chain</a> — CPSM, CSCP, CPIM, CIPS e Microsoft. <small>(nov. 2026)</small></li>
+              <li><a href="eventos.html">Agenda de eventos do setor</a> — INBRASC, Live University e ABRALOG. <small>(nov. 2026)</small></li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="painel" aria-labelledby="setor">
+          <h2 id="setor">Destaques do setor</h2>
+          <div class="painel-corpo">
+            <dl>
+              <dt><strong>Reforma Tributária do consumo</strong></dt>
+              <dd>Com a Emenda Constitucional 132/2023 e a Lei Complementar 214/2025, o Brasil iniciou em 2026 a transição para o IVA dual (CBS e IBS), que segue até 2033. Para Compras, muda a forma de calcular o custo efetivo, de aproveitar créditos e de comparar propostas.</dd>
+              <dt><strong>IA agêntica</strong></dt>
+              <dd>Plataformas de <i lang="en">Source-to-Pay</i> passam a incorporar agentes capazes de conduzir cotações simples, analisar contratos e classificar gastos com mínima intervenção humana.</dd>
+              <dt><strong>Resiliência e regionalização</strong></dt>
+              <dd>Após as rupturas de 2020–2022, empresas diversificam a base de fornecedores, adotam <i lang="en">dual sourcing</i> e valorizam o desenvolvimento de fornecedores locais.</dd>
+              <dt><strong>Descarbonização da cadeia</strong></dt>
+              <dd>Metas de Escopo 3 levam critérios de carbono para dentro das concorrências e dos contratos.</dd>
+            </dl>
+          </div>
+        </section>
+
+        <section class="painel" aria-labelledby="video-home">
+          <h2 id="video-home">Vídeo em destaque</h2>
+          <div class="painel-corpo">
+            <figure>
+              <div class="video">
+                <iframe src="https://www.youtube.com/embed/AKRpe-szYh0?si=tQMi-GyN_2wcTNAb" title="Vídeo do YouTube: introdução a Strategic Sourcing" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+              <figcaption>Vídeo sobre Strategic Sourcing. Também disponível no artigo <a href="strategic-sourcing.html">Strategic Sourcing</a>.</figcaption>
+            </figure>
+          </div>
+        </section>
+      </div>
+
+    </main>
+
+    <aside class="lateral-direita" aria-label="Navegação no artigo">
+      <nav class="sumario" aria-labelledby="sumario-titulo">
+        <h2 id="sumario-titulo">Nesta página</h2>
+        <ol>
+          <li><a href="#sobre">O que é a Procurepédia</a></li>
+          <li><a href="#areas">Resumo das áreas</a></li>
+          <li><a href="#destaque">Artigo em destaque</a></li>
+          <li><a href="#sabia">Você sabia…?</a></li>
+          <li><a href="#recentes">Conteúdos recentes</a></li>
+          <li><a href="#setor">Destaques do setor</a></li>
+          <li><a href="#video-home">Vídeo em destaque</a></li>
+        </ol>
+      </nav>
+    </aside>
+  </div>
+
+  <footer class="rodape">
+    <p>Esta página foi editada pela última vez em 19 de novembro de 2026. Os textos podem ser reutilizados citando a fonte. Marcas citadas pertencem aos seus respectivos titulares.</p>
+    <ul>
+      <li><a href="index.html">Sobre a Procurepédia</a></li>
+      <li><a href="referencias.html">Referências</a></li>
+      <li><a href="#topo">Voltar ao topo</a></li>
+    </ul>
+  </footer>
+  <script>
+    /* Em telas pequenas, o menu começa recolhido (o HTML funciona mesmo sem JavaScript). */
+    if (window.matchMedia("(max-width: 760px)").matches) {
+      document.querySelector(".menu-lateral details").removeAttribute("open");
+    }
+  </script>
+</body>
+</html>
 
     </div>
 </body>
