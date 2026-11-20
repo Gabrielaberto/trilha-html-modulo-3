@@ -19,7 +19,6 @@ A Procurepédia é uma enciclopédia temática sobre Compras Corporativas, Gest�
 ├── referencias.html         Bibliografia em formato ABNT
 ├── css
 │   └── style.css            Folha de estilo única
-└── README.md
 ```
 
 ## Layout
@@ -38,59 +37,7 @@ A Procurepédia é uma enciclopédia temática sobre Compras Corporativas, Gest�
 - **Iframes**: vídeo do YouTube (página inicial e Strategic Sourcing), painel ilustrativo com `srcdoc` (IA e Analytics) e mapa do OpenStreetMap (Eventos).
 - **JavaScript mínimo**: um único trecho recolhe o menu em celulares; o site funciona normalmente sem ele.
 
-## Acessibilidade
+<img width="1285" height="671" alt="image" src="https://github.com/user-attachments/assets/42a06e4b-2c93-4b3c-8bdf-69d9c00b159c" />
+<img width="1280" height="669" alt="image" src="https://github.com/user-attachments/assets/758d09ee-d509-40ca-9015-5cbe8ab26cdd" />
 
-- `lang="pt-BR"` em todas as páginas e `lang="en"` / `lang="la"` em termos estrangeiros, para o leitor de tela pronunciar corretamente.
-- Link **"Pular para o conteúdo"** (aparece ao pressionar `Tab`) e foco visível em todos os elementos.
-- Hierarquia de títulos `h1 → h2 → h3` sem saltos; cada `section` é rotulada com `aria-labelledby`.
-- Página atual marcada no menu com `aria-current="page"`.
-- Tabelas com `caption` e `th scope="col|row"`, dentro de contêineres roláveis acessíveis por teclado (`tabindex="0"`, `role="region"`).
-- Links externos com `target="_blank"`, `rel="noopener noreferrer"` e texto oculto "(abre em nova janela)" para leitores de tela.
-- SVGs com `title` e `desc`; iframes com `title` descritivo e `loading="lazy"`.
-- Respeito à preferência de redução de movimento (`prefers-reduced-motion`).
 
-### Atalhos para navegar com teclado e NVDA
-
-| Ação | Teclado | Com o NVDA ativo |
-|---|---|---|
-| Pular direto para o artigo | `Tab` e `Enter` no link "Pular para o conteúdo" | `D` salta entre regiões (landmarks) |
-| Ir para o próximo título | Usar o "Neste artigo" | `H` (ou `1` a `6` por nível) |
-| Listar todos os links | — | `Insert` + `F7` |
-| Navegar por tabelas | Rolar horizontalmente no celular | `T` e `Ctrl` + `Alt` + setas |
-| Abrir em nova janela | Link "Abrir em nova janela" ou `Shift` + clique | Links externos são anunciados como "abre em nova janela" |
-
-## Responsividade
-
-| Largura da tela | Comportamento |
-|---|---|
-| Acima de 1100 px | Três colunas: menu, artigo e "Neste artigo" |
-| De 761 a 1100 px | Duas colunas: menu à esquerda; "Neste artigo" acima do texto |
-| Até 760 px (celular) | Uma coluna; menu recolhível; infobox ocupa a largura toda |
-
-## Navegação
-
-- Navegação entre páginas pelo menu lateral e por links internos nos textos.
-- Navegação **dentro da página** pelo "Neste artigo", links "Voltar ao topo" e notas de rodapé `[1]` ligadas às referências.
-- Navegação **em novas janelas**: link "Abrir em nova janela" em cada artigo, links "Saiba mais" externos e busca do cabeçalho, que pesquisa o termo na Wikipédia em uma nova aba.
-
-## Como montar o repositório
-
-1. Crie a pasta do projeto e, dentro dela, a subpasta `css`.
-2. Crie cada arquivo com o nome exato da estrutura acima e cole o código correspondente.
-3. Salve tudo com codificação **UTF-8** (para os acentos aparecerem corretamente).
-4. No GitHub: `git add .`, `git commit -m "Procurepédia: desafio Módulo 3"` e `git push`.
-5. Opcional: ative o **GitHub Pages** (Settings → Pages → branch `main`) para publicar o site.
-
-## Como testar
-
-- Abra `index.html` no navegador.
-- Navegue apenas com `Tab`, `Shift + Tab` e `Enter`.
-- Instale o [NVDA](https://www.nvaccess.org/download/) e use os atalhos da tabela acima.
-- Reduza a largura da janela (ou use `F12` → modo dispositivo) para ver as versões tablet e celular.
-
-## Referências técnicas
-
-- W3C — [WCAG 2.1](https://www.w3.org/WAI/standards-guidelines/wcag/pt-BR/)
-- MDN — [Semântica em HTML](https://developer.mozilla.org/pt-BR/docs/Glossary/Semantics)
-- NV Access — [NVDA](https://www.nvaccess.org/download/)
-- Governo Digital — [eMAG](https://emag.governoeletronico.gov.br/)
