@@ -1,38 +1,795 @@
-body, html {
+/* ==========================================================================
+   Procurepédia — Wikipédia de Procurement & Supply Chain
+   Folha de estilo única
+   ========================================================================== */
+
+/* ---------- 1. Base ---------- */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
     margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Pilha de fontes: o navegador usa a primeira disponível no dispositivo */
+    font-family:
+        "Segoe UI",          /* Windows */
+        -apple-system,       /* macOS e iOS (Safari) */
+        BlinkMacSystemFont,  /* macOS e iOS (Chrome) */
+        system-ui,           /* fonte padrão do sistema */
+        Roboto,              /* Android */
+        "Helvetica Neue",    /* macOS antigos */
+        "Noto Sans",         /* Linux e Android */
+        Ubuntu,              /* Linux Ubuntu */
+        Arial,               /* praticamente universal */
+        sans-serif;          /* genérica: garantia final */
+    background-color: #f8f9fa;
+    color: #202122;
 }
-ul { list-style: none; padding-left: 5px; }
-a { color:blue; text-decoration: none;}
-.bar {
-    background-color: #f9f9fb;
-    padding:15px;
-    border-top: solid 1px #cdcdcd;
-    border-bottom: solid 1px #cdcdcd;
+
+button,
+input {
+    font-family: inherit;
 }
-.content {
-    max-width: 1440px;
+
+a {
+    color: #005a9c;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+summary:focus-visible {
+    outline: 3px solid #ffbf00;
+    outline-offset: 2px;
+}
+
+img,
+svg,
+iframe {
+    max-width: 100%;
+}
+
+code {
+    font-family: "Cascadia Code", Consolas, "SF Mono", Menlo, "Courier New", monospace;
+    background-color: #f5f7fa;
+    padding: 1px 4px;
+    border-radius: 3px;
+}
+
+abbr[title] {
+    text-decoration: underline dotted;
+    cursor: help;
+}
+
+/* Texto lido apenas por leitores de tela */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+/* Link "Pular para o conteúdo" */
+.pular-conteudo {
+    position: absolute;
+    left: -9999px;
+}
+
+.pular-conteudo:focus {
+    left: 10px;
+    top: 10px;
+    z-index: 10;
+    background: yellow;
+    color: #202122;
+    padding: 10px;
+}
+
+/* ---------- 2. Cabeçalho ---------- */
+.cabecalho {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px 30px;
+    background-color: white;
+    border-bottom: 1px solid #dcdcdc;
+    padding: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none !important;
+}
+
+.logo svg {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    color: #005a9c;
+}
+
+.logo-texto {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-nome {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #005a9c;
+    margin-bottom: 5px;
+}
+
+.logo-lema {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.busca {
+    display: flex;
+    margin-left: auto;
+    min-width: 0;
+}
+
+.busca input {
+    width: 240px;
+    min-width: 0;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-right: 0;
+    border-radius: 5px 0 0 5px;
+}
+
+.busca button {
+    padding: 8px 15px;
+    color: white;
+    background-color: #005a9c;
+    border: 1px solid #005a9c;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+/* ---------- 3. Layout: menu | artigo | neste artigo ---------- */
+.pagina {
+    max-width: 1400px;
     margin: auto;
-    grid-gap: 3rem;
     display: grid;
-    gap: 3rem;
-    grid-template-areas: "sidebar main anchors";
-    grid-template-columns: minmax(0,15rem) minmax(0,2.5fr) minmax(0,15rem);
-    padding-left: 1rem;
-    padding-right: 1rem;
+    grid-template-columns: 250px 1fr 250px;
+    grid-template-areas: "menu conteudo direita";
+    gap: 25px;
+    padding: 20px;
 }
-.footer {
-    min-height: 100px;
-    border-top: solid 1px #cdcdcd;
+
+.menu-lateral {
+    grid-area: menu;
+    background-color: white;
+    padding: 15px;
+    border-right: 1px solid #ddd;
 }
-.anchors {
-    border-left: solid 1px #cdcdcd;
+
+.conteudo {
+    grid-area: conteudo;
+    min-width: 0;
+    background-color: white;
+    padding: 25px;
+    border-radius: 5px;
+}
+
+.lateral-direita {
+    grid-area: direita;
+    background-color: white;
+    border-left: 1px solid #ddd;
+    padding: 15px;
+}
+
+/* Menus acompanham a rolagem */
+.menu-lateral details,
+.lateral-direita .sumario {
+    position: sticky;
+    top: 20px;
+}
+
+/* Menu da esquerda */
+.menu-lateral summary {
+    font-weight: bold;
+    list-style: none;
+    margin-bottom: 10px;
+    pointer-events: none;
+}
+
+.menu-lateral summary::-webkit-details-marker {
+    display: none;
+}
+
+.menu-lateral h2 {
+    font-size: 0.75em;
+    text-transform: uppercase;
+    color: #666;
+    margin: 20px 0 8px;
+}
+
+.menu-lateral ul,
+.sumario ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-lateral li,
+.sumario li {
+    margin-bottom: 10px;
+}
+
+.menu-lateral a {
+    font-size: 0.95em;
+}
+
+.menu-lateral a[aria-current="page"] {
+    font-weight: bold;
+}
+
+/* "Neste artigo" (direita) */
+.sumario h2 {
+    font-size: 1em;
+    margin: 0 0 10px;
+}
+
+.sumario ol ol {
     padding-left: 15px;
+    margin-top: 8px;
 }
-.sidebar {
-    border-right: solid 1px #cdcdcd;
+
+.sumario a {
+    font-size: 0.95em;
 }
-figure {
+
+/* ---------- 4. Artigo ---------- */
+.conteudo h1 {
+    color: #005a9c;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.conteudo h2 {
+    color: #005a9c;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+    margin-top: 40px;
+}
+
+.conteudo h3 {
+    color: #005a9c;
+}
+
+.conteudo p {
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.conteudo li,
+.conteudo dd {
+    line-height: 1.7;
+}
+
+.subtitulo {
+    color: #666;
+    font-size: 0.85em;
+    margin-top: 0;
+}
+
+/* Nota no início do artigo e citações */
+.nota-topo,
+blockquote {
+    background-color: #f5f7fa;
+    border-left: 4px solid #005a9c;
+    padding: 15px;
+    font-style: italic;
+    margin: 20px 0;
+}
+
+/* Notas de rodapé [1] */
+sup.ref {
+    font-size: 0.7em;
+}
+
+sup.ref a::before {
+    content: "[";
+}
+
+sup.ref a::after {
+    content: "]";
+}
+
+/* ---------- 5. Infobox ---------- */
+.infobox {
+    float: right;
+    width: 300px;
+    margin: 0 0 20px 25px;
+    font-size: 0.9em;
+    background-color: #f5f7fa;
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+}
+
+.infobox caption {
+    padding: 10px;
+    margin: 0;
+    font-weight: bold;
+    color: white;
+    background-color: #005a9c;
+}
+
+.infobox th,
+.infobox td {
+    padding: 8px 10px;
+    border: 0;
+    border-top: 1px solid #ddd;
+    background: none;
+    color: #202122;
+    text-align: left;
+    vertical-align: top;
+}
+
+.infobox-imagem {
+    text-align: center !important;
+}
+
+/* ---------- 6. Tabelas ---------- */
+.tabela-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0 30px 0;
+}
+
+table caption {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background-color: #005a9c;
+    color: white;
+}
+
+tbody th {
+    background-color: #f5f7fa;
+    color: #202122;
+}
+
+tbody tr:nth-child(even) td {
+    background-color: #fafbfc;
+}
+
+/* ---------- 7. Destaques ---------- */
+.caixa {
+    background-color: #f5f7fa;
+    border-left: 4px solid #005a9c;
+    padding: 15px;
+    margin: 20px 0;
+}
+
+.caixa h3 {
+    margin-top: 0;
+}
+
+.caixa--alerta {
+    background-color: #fff8e1;
+    border-left-color: #f0ad00;
+}
+
+.formula {
+    display: block;
+    background-color: #f5f7fa;
+    border-left: 4px solid #005a9c;
+    padding: 15px;
+    margin: 20px 0;
     text-align: center;
+    font-weight: bold;
+}
+
+/* Botão "Saiba mais" */
+.saiba-mais {
+    display: inline-block;
+    margin: 5px 0 15px;
+    padding: 6px 14px;
+    color: white;
+    background-color: #005a9c;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.saiba-mais:hover {
+    background-color: #00467a;
+    text-decoration: none;
+}
+
+.voltar-topo {
+    display: inline-block;
+    font-size: 0.85em;
+    margin-top: 10px;
+}
+
+/* Cartões (página principal e ferramentas) */
+.grade {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.cartao {
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f7fa;
+    border-top: 3px solid #005a9c;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.cartao h3 {
+    margin: 0 0 8px;
+}
+
+.cartao p {
+    flex: 1;
+    text-align: left;
+    margin: 0 0 10px;
+}
+
+.etiqueta {
+    font-size: 0.7em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #666;
+}
+
+/* Página principal */
+.boas-vindas {
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+}
+
+.boas-vindas p {
+    text-align: center;
+}
+
+.portal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 25px;
+}
+
+.painel--largo {
+    grid-column: 1 / -1;
+}
+
+/* Matriz de Kraljic */
+.matriz {
+    display: grid;
+    grid-template-columns: 30px 1fr 1fr;
+    gap: 6px;
+    max-width: 560px;
+    margin: 20px auto 5px;
+}
+
+.matriz .eixo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #666;
+}
+
+.matriz .eixo-y {
+    grid-row: 1 / 3;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+}
+
+.matriz .eixo-x {
+    grid-column: 2 / 4;
+    padding-top: 5px;
+}
+
+.quadrante {
+    padding: 12px;
+    text-align: left;
+    font-size: 0.9em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f7fa;
+}
+
+.quadrante strong {
+    display: block;
+    color: #005a9c;
+}
+
+.q-estrategico {
+    background-color: #dbe9f6;
+}
+
+.q-alavancagem,
+.q-gargalo {
+    background-color: #eaf2fa;
+}
+
+/* Etapas de processo (P2P, Strategic Sourcing etc.) */
+.fluxo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    counter-reset: etapa;
+}
+
+.fluxo li {
+    flex: 1 1 140px;
+    position: relative;
+    padding: 10px 10px 10px 40px;
+    background-color: #f5f7fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9em;
+    line-height: 1.5;
+    counter-increment: etapa;
+}
+
+.fluxo li::before {
+    content: counter(etapa);
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: white;
+    background-color: #005a9c;
+    border-radius: 50%;
+}
+
+/* Figuras, vídeos e mapa */
+figure {
+    margin: 20px 0;
+    text-align: center;
+}
+
+figcaption {
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 6px;
+}
+
+.video,
+.mapa {
+    position: relative;
+    max-width: 640px;
+    margin: auto;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.video {
+    aspect-ratio: 16 / 9;
+}
+
+.mapa {
+    aspect-ratio: 4 / 3;
+    border: 1px solid #ccc;
+}
+
+.video iframe,
+.mapa iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Perguntas frequentes */
+details.expansivel {
+    background-color: #f5f7fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 8px 0;
+}
+
+details.expansivel summary {
+    padding: 10px 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+details.expansivel > div {
+    padding: 0 15px 10px;
+}
+
+/* Referências e categorias */
+.referencias {
+    font-size: 0.9em;
+}
+
+.referencias li {
+    margin-bottom: 8px;
+}
+
+.lista-colunas {
+    columns: 2 220px;
+}
+
+.categorias {
+    clear: both;
+    margin-top: 40px;
+    padding: 10px 15px;
+    font-size: 0.85em;
+    background-color: #f5f7fa;
+    border: 1px solid #ddd;
+}
+
+.categorias ul {
+    display: inline;
+    padding: 0;
+    list-style: none;
+}
+
+.categorias li {
+    display: inline;
+}
+
+.categorias li + li::before {
+    content: " | ";
+    color: #999;
+}
+
+/* ---------- 8. Rodapé ---------- */
+.rodape {
+    text-align: center;
+    color: #666;
+    font-size: 0.85em;
+    padding: 10px 20px 30px;
+}
+
+.rodape ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px 20px;
+    list-style: none;
+    padding: 0;
+}
+
+/* ---------- 9. Responsividade ---------- */
+
+/* Tablet: "Neste artigo" sobe para cima do texto */
+@media (max-width: 1100px) {
+    .pagina {
+        grid-template-columns: 220px 1fr;
+        grid-template-areas:
+            "menu direita"
+            "menu conteudo";
+    }
+
+    .lateral-direita {
+        border-left: 0;
+        border-radius: 5px;
+    }
+
+    .lateral-direita .sumario {
+        position: static;
+    }
+}
+
+/* Celular: uma coluna */
+@media (max-width: 760px) {
+    .pagina {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "menu"
+            "direita"
+            "conteudo";
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .menu-lateral {
+        border-right: 0;
+        border-radius: 5px;
+    }
+
+    .menu-lateral details {
+        position: static;
+    }
+
+    .menu-lateral summary {
+        pointer-events: auto;
+        cursor: pointer;
+        margin-bottom: 0;
+    }
+
+    .menu-lateral summary::before {
+        content: "☰ ";
+    }
+
+    .menu-lateral details[open] summary {
+        margin-bottom: 10px;
+    }
+
+    .conteudo {
+        padding: 15px;
+    }
+
+    .conteudo p {
+        text-align: left;
+    }
+
+    .infobox {
+        float: none;
+        width: 100%;
+        margin: 0 0 20px;
+    }
+
+    .portal {
+        grid-template-columns: 1fr;
+    }
+
+    .busca {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .busca input {
+        flex: 1;
+        width: auto;
+    }
+
+    .logo-lema {
+        display: none;
+    }
+}
+
+/* ---------- 10. Impressão ---------- */
+@media print {
+    .menu-lateral,
+    .lateral-direita,
+    .busca,
+    .video,
+    .mapa {
+        display: none;
+    }
+
+    .pagina {
+        display: block;
+    }
 }
